@@ -19,7 +19,13 @@ target_sources(external-imgui PRIVATE
 	Vendor/imgui/imgui_draw.cpp
 	Vendor/imgui/imgui_tables.cpp
 	Vendor/imgui/imgui_widgets.cpp
+
+	Vendor/imgui/backends/imgui_impl_opengl3.cpp
+	Vendor/imgui/backends/imgui_impl_glfw.cpp
 )
+
+target_include_directories(external-imgui PRIVATE Vendor/imgui)
+target_link_libraries(external-imgui PRIVATE glfw OpenGL::GL)
 
 add_subdirectory(Core)
 add_subdirectory(Engine)
