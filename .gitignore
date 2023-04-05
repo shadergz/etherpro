@@ -2,3 +2,6 @@
 Binaries
 cmake-build-debug
 
+.vs
+out
+Runtime
