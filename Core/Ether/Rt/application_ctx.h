@@ -1,6 +1,6 @@
 #pragma once
 
-#include <memory>
+#include <thread>
 
 namespace Ether::Rt {
 
@@ -9,8 +9,10 @@ namespace Ether::Rt {
         ProcessContext() = default;
         ~ProcessContext() = default;
 
-        [[noreturn]] static void enter_inner_loop() {
-            while (true) {}
+        [[noreturn]] static void enterInnerLoop() {
+            while (1) { 
+                std::this_thread::sleep_for(std::chrono::milliseconds(10000));
+            }
         }
     };
 
