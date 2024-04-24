@@ -21,12 +21,10 @@ namespace Ether::Engine {
 
     APPLICATION_EXPORT MAYBE_UNUSED int main() {
         auto engine_entry = std::make_unique<MainApplication>();
-        GLFWwindow* window;
-
         if (!glfwInit())
             return -1;
 
-        window = glfwCreateWindow(1280, 720, "Etherpro Layer Editor", NULL, NULL);
+        const auto window = glfwCreateWindow(1280, 720, "Etherpro Layer Editor", nullptr, nullptr);
         if (!window)
         {
             glfwTerminate();
